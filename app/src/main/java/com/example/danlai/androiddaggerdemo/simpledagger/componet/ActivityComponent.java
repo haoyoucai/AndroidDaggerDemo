@@ -1,8 +1,7 @@
 package com.example.danlai.androiddaggerdemo.simpledagger.componet;
 
-import android.support.v7.app.AppCompatActivity;
-
 import com.example.danlai.androiddaggerdemo.MainActivity;
+import com.example.danlai.androiddaggerdemo.simpledagger.module.UserModule;
 
 import dagger.Component;
 
@@ -10,8 +9,8 @@ import dagger.Component;
  * Created by DanLai on 2018/3/10.
  */
 
-
-@Component
+@Component(modules = UserModule.class)
 public interface ActivityComponent {
+
     void inject(MainActivity appCompatActivity);
 }

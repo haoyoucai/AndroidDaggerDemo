@@ -1,7 +1,8 @@
 package com.example.danlai.androiddaggerdemo;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import com.example.danlai.androiddaggerdemo.simpledagger.componet.DaggerActivityComponent;
 import com.example.danlai.androiddaggerdemo.simpledagger.entity.User;
@@ -9,6 +10,8 @@ import com.example.danlai.androiddaggerdemo.simpledagger.entity.User;
 import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final String TAG = MainActivity.class.getSimpleName();
 
     @Inject
     User user;
@@ -19,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         DaggerActivityComponent.create().inject(this);
         user.setUserName("O'Neal");
-        System.out.println(user.toString());
+        Log.w(TAG, "**##**" + user.getUserName());
     }
 }
 
