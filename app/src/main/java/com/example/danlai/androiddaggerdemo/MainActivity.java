@@ -5,7 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.example.danlai.androiddaggerdemo.simpledagger.componet.DaggerActivityComponent;
-import com.example.danlai.androiddaggerdemo.simpledagger.entity.User;
+import com.example.danlai.androiddaggerdemo.simpledagger.entity.Apple;
+import com.example.danlai.androiddaggerdemo.simpledagger.entity.Pear;
 
 import javax.inject.Inject;
 
@@ -14,15 +15,19 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
 
     @Inject
-    User user;
+    Apple apple;
+
+    @Inject
+    Pear pear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         DaggerActivityComponent.create().inject(this);
-        user.setUserName("O'Neal");
-        Log.w(TAG, "**##**" + user.getUserName());
+
+        Log.e(TAG, apple.whoAmI());
+        Log.e(TAG, pear.whoAmI());
     }
 }
 
