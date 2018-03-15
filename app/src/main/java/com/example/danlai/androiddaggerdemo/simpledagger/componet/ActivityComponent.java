@@ -11,9 +11,8 @@ import dagger.Component;
  */
 
 
-@Component(modules = {FruitModule.class, VegetableModule.class},dependencies = FoodComponent.class)
+@Component(modules = {FruitModule.class, VegetableModule.class},
+        dependencies = {FoodComponent.class, FireComponent.class})
 public interface ActivityComponent {
-
-
     void inject(MainActivity appCompatActivity);
 }
