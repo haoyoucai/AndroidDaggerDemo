@@ -1,6 +1,7 @@
 package com.example.danlai.androiddaggerdemo.simpledagger.componet;
 
-import com.example.danlai.androiddaggerdemo.simpledagger.module.FruitModule;
+import com.example.danlai.androiddaggerdemo.simpledagger.entity.Water;
+import com.example.danlai.androiddaggerdemo.simpledagger.module.WaterModule;
 
 import dagger.Component;
 
@@ -10,7 +11,9 @@ import dagger.Component;
  * @description： （提取的base Component
  * ）
  */
-@Component(modules = FruitModule.class)
+@Component(modules = WaterModule.class)
 public interface FoodComponent {
+
+    Water getWater();
 
 }

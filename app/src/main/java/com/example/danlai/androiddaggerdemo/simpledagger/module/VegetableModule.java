@@ -11,14 +11,13 @@ import dagger.Provides;
  * @date： 2018/03/14
  * @description： （蔬菜module！！）
  */
+
 @Module
 public class VegetableModule {
-
     @Provides
     Potato providePatato() {
         return new Potato();
     }
-
     @Provides
     Tomato provideTomato() {
         return new Tomato();
