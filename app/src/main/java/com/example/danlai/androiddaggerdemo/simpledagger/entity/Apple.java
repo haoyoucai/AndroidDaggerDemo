@@ -9,7 +9,11 @@ public class Apple {
 
     private String color;
 
+    public Apple(String color) {
+        this.color = color;
+    }
+
     public String whoAmI() {
-        return "I am an apple!";
+        return "I am an " + color + " apple!";
     }
 }

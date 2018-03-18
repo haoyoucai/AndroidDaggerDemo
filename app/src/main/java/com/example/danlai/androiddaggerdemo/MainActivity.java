@@ -7,6 +7,7 @@ import android.util.Log;
 import com.example.danlai.androiddaggerdemo.simpledagger.componet.DaggerActivityComponent;
 import com.example.danlai.androiddaggerdemo.simpledagger.entity.Apple;
 import com.example.danlai.androiddaggerdemo.simpledagger.entity.Pear;
+import com.example.danlai.androiddaggerdemo.simpledagger.module.FruitModule;
 
 import javax.inject.Inject;
 
@@ -24,8 +25,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        DaggerActivityComponent.create().inject(this);
-
+        DaggerActivityComponent.builder().fruitModule(new FruitModule("read", "yellow")).build().inject(this);
         Log.e(TAG, apple.whoAmI());
         Log.e(TAG, pear.whoAmI());
     }
