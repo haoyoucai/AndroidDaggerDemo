@@ -1,21 +1,24 @@
 package com.example.danlai.androiddaggerdemo;
 
-import android.content.Intent;
+import android.app.Activity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
 
 import com.example.danlai.androiddaggerdemo.simpledagger.componet.ActivityComponent;
 import com.example.danlai.androiddaggerdemo.simpledagger.componet.DaggerActivityComponent;
 import com.example.danlai.androiddaggerdemo.simpledagger.entity.Apple;
 import com.example.danlai.androiddaggerdemo.simpledagger.entity.Pear;
+import com.example.danlai.androiddaggerdemo.simpledagger.scope.MyScope;
 
 import javax.inject.Inject;
 
-public class MainActivity extends AppCompatActivity {
-
-    public static final String TAG = MainActivity.class.getSimpleName();
+/**
+ * Created by DanLai on 2018/4/7.
+ */
+public class SecondActivity extends AppCompatActivity {
+    public static final String TAG = SecondActivity.class.getSimpleName();
 
     @Inject
     Apple apple;
@@ -28,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
     Pear pear2;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_second);
 
         ActivityComponent activityComponent = DaggerActivityComponent.create();
         activityComponent.inject(this);
@@ -41,11 +44,4 @@ public class MainActivity extends AppCompatActivity {
         Log.e(TAG, pear.whoAmI());
         Log.e(TAG, pear2.whoAmI());
     }
-
-    public void goSecond(View view) {
-        //跳转到SecondActivity
-        startActivity(new Intent(MainActivity.this, SecondActivity.class));
-    }
 }
-
-
