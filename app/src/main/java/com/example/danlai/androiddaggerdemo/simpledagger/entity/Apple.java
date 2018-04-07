@@ -10,11 +10,7 @@ import javax.inject.Singleton;
  */
 public class Apple {
 
-    public Apple() {
-    }
-
     private String color;
-
 
     public String whoAmI() {
         return "I am an  apple!" + toString();
