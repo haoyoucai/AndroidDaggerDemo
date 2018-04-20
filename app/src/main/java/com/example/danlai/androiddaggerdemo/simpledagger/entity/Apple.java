@@ -1,8 +1,5 @@
 package com.example.danlai.androiddaggerdemo.simpledagger.entity;
 
-import javax.inject.Inject;
-import javax.inject.Singleton;
-
 /**
  * @author： 沈丹来 shendanlai@tniu.com
  * @date： 2018/03/14
@@ -10,9 +7,17 @@ import javax.inject.Singleton;
  */
 public class Apple {
 
-    private String color;
+    private String color = "no_color";
+
+    public Apple() {
+
+    }
+
+    public Apple(String color) {
+        this.color  = color;
+    }
 
     public String whoAmI() {
-        return "I am an  apple!" + toString();
+        return "I am an "+color+" apple!" + toString();
     }
 }

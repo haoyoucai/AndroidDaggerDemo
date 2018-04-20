@@ -1,11 +1,9 @@
 package com.example.danlai.androiddaggerdemo.simpledagger.module;
 
 import com.example.danlai.androiddaggerdemo.simpledagger.entity.Apple;
-import com.example.danlai.androiddaggerdemo.simpledagger.entity.Pear;
 import com.example.danlai.androiddaggerdemo.simpledagger.scope.MyScope;
 
-import javax.inject.Scope;
-import javax.inject.Singleton;
+import javax.inject.Named;
 
 import dagger.Module;
 import dagger.Provides;
@@ -20,14 +18,16 @@ public class FruitModule {
     //使用Scope修饰Apple的Provide
     @MyScope
     @Provides
+    @Named("noColor")
     Apple provideApple() {
         return new Apple();
     }
 
-    //不使用Scope修饰Pear的Provide
+
     @Provides
-    Pear providePear() {
-        return new Pear();
+    @Named("redColor")
+    Apple provideApple2() {
+        return new Apple("red");
     }
 
 }

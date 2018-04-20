@@ -1,7 +1,6 @@
 package com.example.danlai.androiddaggerdemo.simpledagger.componet;
 
 import com.example.danlai.androiddaggerdemo.MainActivity;
-import com.example.danlai.androiddaggerdemo.SecondActivity;
 import com.example.danlai.androiddaggerdemo.simpledagger.module.FruitModule;
 import com.example.danlai.androiddaggerdemo.simpledagger.scope.MyScope;
 
@@ -17,6 +16,4 @@ public interface ActivityComponent {
     //可以注入到MainActivity
     void inject(MainActivity appCompatActivity);
 
-    //可以注入到SecondActivity中
-    void inject(SecondActivity appCompatActivity);
 }
